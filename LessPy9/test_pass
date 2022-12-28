@@ -1,0 +1,26 @@
+import password
+
+def test_PaSsWoRd():
+    ''' Не должно быть комбинации password '''
+
+    assert password.password('PaSsWoRd') == False
+
+def test_12345678():
+    ''' Не должен состоять только из цифр '''
+
+    assert password.password('12345678') == False
+
+def test_mkfmsmlcmdl():
+    ''' Не должен состоять только из букв '''
+
+    assert password.password('mkfmsmlcmdl') == False
+
+def test_qwe():
+    ''' Не должен быть меньше 6 символов '''
+
+    assert password.password('qwe') == False
+
+def test_true():
+    ''' Верный вариант пароля '''
+
+    assert password.password('Gh7-It9') == True
